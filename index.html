@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>The Big Race: Dashboard</title>
+    <style>
+        body { background: #0b0e14; color: #00e5ff; font-family: monospace; text-align: center; padding: 50px; }
+        .timer { font-size: 48px; border: 2px solid #ff4081; padding: 20px; display: inline-block; margin: 20px; }
+        .button-grid { margin-top: 30px; }
+        button { background: #1a237e; color: white; border: none; padding: 15px 30px; margin: 10px; cursor: pointer; border-radius: 5px; font-size: 18px; }
+        button:hover { background: #4a148c; }
+    </style>
+</head>
+<body>
+    <h1>🛰️ SHAMANIC CIRCUIT: DAILY SYNC</h1>
+    <p>Time until next Continental Purge:</p>
+    <div class="timer" id="countdown">24:00:00</div>
+    
+    <div class="button-grid">
+        <button onclick="alert('Applying Heart-Bloom 🎧#♥️')">HEALER SYNC</button>
+        <button onclick="alert('Resolve Shield Active 🛡️#😁')">TANK SHIELD</button>
+        <button onclick="alert('Spawn Point Planted 🎯#🚀')">DPS DEPLOY</button>
+    </div>
+
+    <script>
+        function updateTimer() {
+            const now = new Date();
+            const tomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+            const diff = tomorrow - now;
+            
+            const hours = Math.floor(diff / 1000 / 60 / 60);
+            const minutes = Math.floor(diff / 1000 / 60) % 60;
+            const seconds = Math.floor(diff / 1000) % 60;
+            
+            document.getElementById('countdown').innerHTML = 
+                (hours < 10 ? '0' : '') + hours + ":" + 
+                (minutes < 10 ? '0' : '') + minutes + ":" + 
+                (seconds < 10 ? '0' : '') + seconds;
+        }
+        setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+</body>
+</html>
