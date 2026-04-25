@@ -1,0 +1,95 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Project Paws & Peace | Dashboard</title>  
+    <style>  
+        :root {  
+            --primary: #2c3e50;  
+            --accent: #27ae60;  
+            --bg: #f4f7f6;  
+            --text: #333;  
+        }  
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; display: flex; height: 100vh; background: var(--bg); color: var(--text); }  
+          
+        /* Sidebar */  
+        nav { width: 260px; background: var(--primary); color: white; padding: 20px; display: flex; flex-direction: column; }  
+        nav h2 { font-size: 1.2rem; border-bottom: 1px solid #455a64; padding-bottom: 10px; }  
+        nav a { color: #bdc3c7; text-decoration: none; margin: 10px 0; transition: 0.3s; }  
+        nav a:hover { color: white; }  
+  
+        /* Main Content */  
+        main { flex: 1; padding: 40px; overflow-y: auto; }  
+        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }  
+          
+        /* Task Generator */  
+        #task-box { border-left: 5px solid var(--accent); }  
+        button { background: var(--accent); color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }  
+        button:hover { background: #219150; }  
+          
+        .protocol-tag { display: inline-block; background: #e8f5e9; color: #2e7d32; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; margin-bottom: 10px; }  
+    </style>  
+</head>  
+<body>  
+  
+    <nav>  
+        <h2>🐾 Paws & Peace</h2>  
+        <a href="#about">Project Mission</a>  
+        <a href="#protocols">Veterinary Protocols</a>  
+        <a href="#community">Community Support</a>  
+        <a href="#dev">C++ Dev Logs</a>  
+        <div style="margin-top: auto; font-size: 0.8rem; color: #7f8c8d;">  
+            Status: Synchronized 🟢  
+        </div>  
+    </nav>  
+  
+    <main>  
+        <div class="card" id="about">  
+            <h1>System Dashboard</h1>  
+            <p>Welcome to the grounded control center for Project Paws & Peace. This interface translates high-level strategy into local community action.</p>  
+        </div>  
+  
+        <div class="card" id="task-box">  
+            <span class="protocol-tag">Action Engine</span>  
+            <h3>Daily Community Task</h3>  
+            <p id="task-display">Click the button to generate a grounded task for today.</p>  
+            <button onclick="generateTask()">Generate Task ⚡</button>  
+        </div>  
+  
+        <div class="card" id="protocols">  
+            <h3>Active Protocols</h3>  
+            <ul>  
+                <li><strong>Mobile Clinic:</strong> Scheduling regional rotations for Garden Hill.</li>  
+                <li><strong>Supply Chain:</strong> Tracking essential veterinary inventory.</li>  
+                <li><strong>Education:</strong> Community stewardship workshops.</li>  
+            </ul>  
+        </div>  
+
+        <div class="card" id="resources">  
+            <h3>Help Resources</h3>  
+            <p>If you or someone you know is in crisis:</p>  
+            <ul>  
+                <li>📞 Crisis Hotline (US): <strong>988</strong></li>  
+                <li>🌐 <a href="https://www.thehotline.org/" target="_blank">National Domestic Violence Hotline</a></li>  
+                <li>🕊️ Local resources (consult your community directory).</li>  
+            </ul>  
+        </div>  
+    </main>  
+  
+    <script>  
+        function generateTask() {  
+            const tasks = [  
+                "Log one community animal observation.",  
+                "Review Mobile Clinic supply inventory.",  
+                "Update one entry in the Project README.",  
+                "Verify network stability for the local hub.",  
+                "Organize one folder in the GitHub repository.",  
+                "Document a local stewardship success story."  
+            ];  
+            const randomIndex = Math.floor(Math.random() * tasks.length);  
+            document.getElementById('task-display').innerText = tasks[randomIndex];  
+        }  
+    </script>  
+</body>  
+</html>
